@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  app:
+    container_name: node_app
+    build: .
+    working_dir: /app
+    restart: always
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    command: npm run dev
